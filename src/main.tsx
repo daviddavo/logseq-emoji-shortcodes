@@ -3,6 +3,23 @@ import "@logseq/libs";
 import "./index.css";
 
 import uEmojiParser from 'universal-emoji-parser'
+import { EmojiParseOptionsType } from "universal-emoji-parser/dist/lib/type";
+
+function replaceHtml(node: ChildNode, options: EmojiParseOptionsType) {
+  // Based on https://github.com/daviddavo/logseq-furigana/blob/ad616c79277ac2daf68d3d37c050e9ddff76919f/src/parsers/CommonParser.tsx#L10-L23
+  if (['CODE', 'RUBY', 'A'].includes(node.nodeName)) {
+    return
+  }
+
+  if (node.hasChildNodes()) {
+    for (const child of node.childNodes) {
+      replaceHtml(child, options)
+    }
+  } else {
+    // Node is Text or something like that
+    node.replaceWith(uEmojiParser.parse(node.textContent ?? "", options))
+  }
+}
 
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
@@ -30,8 +47,10 @@ async function main() {
           const element = node as HTMLElement 
 
           for (const content of element.querySelectorAll('div.block-content') as NodeListOf<HTMLElement>) {
-            // TODO: Make this only on text nodes? (only if it raises errors)
-            content.innerHTML = uEmojiParser.parseToUnicode(content.innerHTML)
+            // Easier to debug
+            if (/:\w+:/.test(content.innerHTML)) {
+              replaceHtml(content, {parseToHtml: false, parseToUnicode: true, parseToShortcode: true,})
+            }
           }
         }
       }
