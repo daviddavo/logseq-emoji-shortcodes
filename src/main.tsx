@@ -8,6 +8,21 @@ import uEmojiParser from 'universal-emoji-parser'
 const css = (t, ...args) => String.raw(t, ...args);
 
 async function main() {
+  logseq.Editor.registerSlashCommand(
+    "Convert shortcodes to emoji",
+    async ({pid, format, uuid}) => {
+      const content = await logseq.Editor.getEditingBlockContent()
+      logseq.Editor.updateBlock(uuid, uEmojiParser.parseToUnicode(content))
+    }
+  )  
+  logseq.Editor.registerSlashCommand(
+    "Convert emoji to shortcodes",
+    async ({pid, format, uuid}) => {
+      const content = await logseq.Editor.getEditingBlockContent()
+      logseq.Editor.updateBlock(uuid, uEmojiParser.parseToShortcode(content))
+    }
+  )  
+
   const observer = new MutationObserver((mutationList, observer) => {
     for (const m of mutationList) {
       for (const node of m.addedNodes) {
