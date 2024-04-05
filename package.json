@@ -10,8 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "^0.0.14",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "universal-emoji-parser": "^1.0.127"
   },
   "devDependencies": {
@@ -39,7 +37,7 @@
   },
   "logseq": {
     "id": "_daviddavo-logseq-emoji-shortcodes",
-    "icon": "logo.svg",
+    "icon": "logo.png",
     "title": "Logseq Emoji Shortcodes"
   }
 }
