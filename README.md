@@ -16,6 +16,8 @@ Choose if you want to modify your notes or not:
   - Modifies your notes but you can read them without having the plugin installed.
 - **Markdown rendering** to show shortcodes without modifying your notes
   - Just write something like `:smile:` and it will show you ":smile:", depending on your installed font
+ 
+You can check the full list of emojis and its slugs [here](https://github.com/DailyBotHQ/universal-emoji-parser/blob/main/src/lib/emoji-lib.json)
 
 ## How to develop
 1. Clone the repository
