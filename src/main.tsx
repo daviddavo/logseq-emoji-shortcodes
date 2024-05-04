@@ -7,7 +7,7 @@ import { EmojiParseOptionsType } from "universal-emoji-parser/dist/lib/type";
 
 function replaceHtml(node: ChildNode, options: EmojiParseOptionsType) {
   // Based on https://github.com/daviddavo/logseq-furigana/blob/ad616c79277ac2daf68d3d37c050e9ddff76919f/src/parsers/CommonParser.tsx#L10-L23
-  if (['CODE', 'RUBY', 'A'].includes(node.nodeName)) {
+  if (['CODE', 'RUBY', 'A', 'INPUT'].includes(node.nodeName)) {
     return
   }
 
