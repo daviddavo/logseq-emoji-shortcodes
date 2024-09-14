@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/daviddavo/logseq-emoji-shortcodes/compare/v1.0.1...v2.0.0) (2024-09-14)
+
+
+### deps
+
+* Updated universal-emoji-parser to v2 ([73c93f6](https://github.com/daviddavo/logseq-emoji-shortcodes/commit/73c93f6f3a56224b7422eaff98b62d21764a4899))
+
+
+### BREAKING CHANGES
+
+* Some shortcodes have changed
+Signed-off-by: David Davó <david@ddavo.me>
+
 ## [1.0.1](https://github.com/daviddavo/logseq-emoji-shortcodes/compare/v1.0.0...v1.0.1) (2024-05-04)
 
 
