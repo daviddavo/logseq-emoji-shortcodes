@@ -19,6 +19,8 @@ Choose if you want to modify your notes or not:
  
 You can check the full list of emojis and its slugs [here](https://github.com/DailyBotHQ/universal-emoji-parser/blob/main/src/lib/emoji-lib.json)
 
+[@chriscz](https://github.com/chriscz) also made a useful reference guide and script to update it! Please [check it out](https://gist.github.com/chriscz/6ccd217796b0e088f9d63bdad60df83f)
+
 ## How to develop
 1. Clone the repository
 2. Make sure you have pnpm installed, [install](https://pnpm.io/installation) if necessary 🛠
