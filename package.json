@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "^0.0.14",
-    "universal-emoji-parser": "^1.0.127"
+    "universal-emoji-parser": "^2.0.16"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
